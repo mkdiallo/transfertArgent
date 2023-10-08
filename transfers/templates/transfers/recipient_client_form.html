@@ -1,0 +1,11 @@
+{% extends "transfers/base.html" %}
+
+{% block content %}
+  <h2>Enregistrer le Client Bénéficiaire</h2>
+  <p>Client Émetteur: {{ sender_client.first_name }} {{ sender_client.last_name }}</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+  </form>
+{% endblock %}
